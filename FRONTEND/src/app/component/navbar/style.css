@@ -1,0 +1,28 @@
+.container{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-content: flex-end;
+}
+.logo{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-end;
+  font-size: var(--important);
+}
+.line{
+  width: 100vw;
+  height: 0.3rem;
+  background-color: var(--yellow);
+  position: absolute;
+  top: 14.5%;
+}
+.img{
+  width: 5vw;
+  height: 10vh;
+}
+.botoes{
+  flex-direction: row;
+}
+

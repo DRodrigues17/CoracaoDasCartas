@@ -1,0 +1,24 @@
+.footer-container{
+  position: relative;
+  justify-self: end;
+  bottom:0;
+}
+.footer-line{
+  width: 100vw;
+  height: 0.3rem;
+  background-color: var(--yellow);
+  position: relative;
+  bottom: 27%;
+}
+.criador {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-end;
+}
+p{
+  color: var(--yellow);
+  font-size: var(--important);
+  text-decoration: underline;
+}
+
