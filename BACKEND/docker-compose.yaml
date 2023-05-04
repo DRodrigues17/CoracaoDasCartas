@@ -1,13 +1,17 @@
 version: '3.1'
 services:
-  db:
-    image: postgres
-    restart: always
+  db-hoc:
+    image: postgres:latest
+    restart: unless-stopped
     environment:
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: 62442
-      POSTGRES_DB: db-heart-of-cards
-    ports:
-      - "5432:5432"
+      POSTGRES_DB: dbheartofcards
+      POSTGRES_USER: heartofcards
+      POSTGRES_PASSWORD: heartofcards
+
+      PGDATA: /var/lib/postgresql/data
     volumes:
-      - "~/data:/var/lib/postgresql/data"
+      - db-hoc:/var/lib/postgresql/data
+    ports:
+      - "1717:5432"
+volumes:
+  db-hoc:

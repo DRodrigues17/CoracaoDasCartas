@@ -1,16 +1,15 @@
 server:
   servlet:
     context-path: /heart-of-cards/v1
-
 spring:
   datasource:
-    password: 62442
-    url: jdbc:postgresql://localhost:5432/db-heart-of-cards?createDatabaseIfNotExist=true
-    username: postgres
+    username: heartofcards
+    url: jdbc:postgresql://localhost:1717/dbheartofcards
+    driverClassName: org.postgresql.Driver
+    password: heartofcards
+
   jpa:
+    database-platform: org.hibernate.dialect.PostgreSQL94Dialect
     hibernate:
-    properties:
-      hibernate:
-        dialect: org.hibernate.dialect.PostgreSQLDialect
-        format_sql: false
-    show-sql: true
+      ddl-auto: create-drop
+    show-sql: 'false'
