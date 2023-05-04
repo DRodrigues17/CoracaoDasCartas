@@ -1,0 +1,62 @@
+:root {
+  --yellow: #ffc100;
+  --fuchsia: #9a0056;
+  --violet: #580069;
+  --purple: #11007e;
+  --blue: #003287;
+  --important: 22px;
+  --normal: 17px;
+}
+@font-face {
+  font-family: matrix;
+  src: url(./assets/font/matrix-iiot/Matrix.ttf) format("truetype"),
+    url(assets/font/matrix-iiot/Matrix-Bold.ttf) format("truetype");
+}
+html,
+body {
+  height: 100%;
+}
+* {
+  margin: 0;
+  font-family: matrix, matrix-bold;
+}
+
+.site-identity {
+  background: var(--blue);
+  color: var(--yellow);
+  width: 100vw;
+  height: 15vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.botao {
+  border: 3px solid var(--yellow);
+  background: var(--violet);
+  color: var(--yellow);
+  font-size: 20px;
+  padding: 0.2rem 1.5rem;
+  border-radius: 20px;
+  width: fit-content;
+  height: 5vh;
+  margin-left: 2vw;
+  transition: 0.5s;
+}
+.botao:hover {
+  background-color: var(--fuchsia);
+  box-shadow: 0 6px 12px var(--fuchsia);
+  font-family: matrix-bold;
+  height: 6vh;
+  font-weight: bold;
+}
+
+.botao:active {
+  border: 3px solid var(--violet);
+  box-shadow: 0 6px 12px var(--violet);
+  background-color: var(--yellow);
+  color: var(--violet);
+  height: 6vh;
+  font-weight: bold;
+}
