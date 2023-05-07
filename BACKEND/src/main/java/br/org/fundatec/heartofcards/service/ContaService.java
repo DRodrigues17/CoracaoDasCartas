@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 public class ContaService {
     private ContaRepository contaRepository;
 
-    public ContaResponse criarConta(ContaRequest conta){
+    public ContaResponse criarConta(ContaRequest conta) {
         return null;
     }
 

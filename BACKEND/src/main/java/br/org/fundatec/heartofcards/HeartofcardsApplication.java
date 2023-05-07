@@ -10,8 +10,8 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 @SpringBootApplication
 public class HeartofcardsApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(HeartofcardsApplication.class, args);
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(HeartofcardsApplication.class, args);
+    }
 
 }
