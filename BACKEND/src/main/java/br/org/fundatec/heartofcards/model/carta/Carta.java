@@ -1,11 +1,10 @@
 package br.org.fundatec.heartofcards.model.carta;
 
+import br.org.fundatec.heartofcards.model.ConjuntoDeImagens;
 import br.org.fundatec.heartofcards.model.Deck;
+import jakarta.annotation.Nullable;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import java.util.List;
 import java.util.UUID;
@@ -13,20 +12,27 @@ import java.util.UUID;
 @Getter
 @Setter
 @Entity
+@Builder
 @NoArgsConstructor
 @AllArgsConstructor
-@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
-@DiscriminatorColumn(name = "tipo_carta",
-        discriminatorType = DiscriminatorType.STRING)
-public abstract class Carta {
+public class Carta {
     @Id
+    @GeneratedValue(strategy = GenerationType.UUID)
     protected UUID id;
     protected String nome;
     protected String tipo;
+    @Lob
     protected String descricaoDaCarta;
-
+    @Nullable
     @ManyToMany(mappedBy = "cartas")
     protected List<Deck> decks;
+    @OneToMany(mappedBy = "carta")
+    protected List<ConjuntoDeImagens> imagensDaCarta;
 
-    protected List<String> imagensDaCarta;
+    protected int pontosDeAtaque;
+    protected int pontosDeDefesa;
+    protected int nivel;
+    protected String raca;
+    protected String atributo;
+
 }

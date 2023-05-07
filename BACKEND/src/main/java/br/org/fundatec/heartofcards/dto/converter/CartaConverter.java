@@ -1,24 +1,19 @@
 package br.org.fundatec.heartofcards.dto.converter;
 
+import br.org.fundatec.heartofcards.dto.api.ApiImageSet;
+import br.org.fundatec.heartofcards.dto.api.CartaApiResponse;
+import br.org.fundatec.heartofcards.dto.api.DeckApiResponse;
 import br.org.fundatec.heartofcards.dto.response.CartaResponse;
+import br.org.fundatec.heartofcards.model.ConjuntoDeImagens;
+import br.org.fundatec.heartofcards.model.Deck;
 import br.org.fundatec.heartofcards.model.carta.Carta;
-import br.org.fundatec.heartofcards.model.carta.CartaArmadilha;
-import br.org.fundatec.heartofcards.model.carta.CartaMagia;
-import br.org.fundatec.heartofcards.model.carta.CartaMonstro;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class CartaConverter {
 
     public static CartaResponse converterParaResponse(Carta carta) {
-        if (carta.getTipo().contains("monster")){
-            return converterParaResponse(carta);
-        } else if (carta.getTipo().contains("spell")) {
-            return converterParaResponse(carta);
-        }
-        return converterParaResponse(carta);
-    }
-
-
-    private static CartaResponse converterParaResponse(CartaMonstro carta){
         return CartaResponse.builder()
                 .nome(carta.getNome())
                 .tipo(carta.getTipo())
@@ -31,63 +26,40 @@ public class CartaConverter {
                 .atributo(carta.getAtributo())
                 .build();
     }
-    private static CartaResponse converterParaResponse(CartaMagia carta){
-        return CartaResponse.builder()
-                .nome(carta.getNome())
-                .tipo(carta.getTipo())
-                .descricaoDaCarta(carta.getDescricaoDaCarta())
-                .decks(carta.getDecks())
+
+
+    public static Carta converterParaEntidade(CartaApiResponse response) {
+        return Carta.builder()
+                .nome(response.name())
+                .tipo(response.type())
+                .descricaoDaCarta(response.desc())
+                .imagensDaCarta(gerarListaDeImagens(response.card_images()))
+                .pontosDeAtaque(response.atk())
+                .pontosDeDefesa(response.def())
+                .nivel(response.level())
+                .raca(response.race())
+                .atributo(response.attribute())
                 .build();
     }
-    private static CartaResponse converterParaResponse(CartaArmadilha carta){
-        return CartaResponse.builder()
-                .nome(carta.getNome())
-                .tipo(carta.getTipo())
-                .descricaoDaCarta(carta.getDescricaoDaCarta())
-                .decks(carta.getDecks())
-                .build();
-    }
 
 
+    private static List<Deck> gerarListaDeDecks(List<DeckApiResponse> response) {
+        List<Deck> listaDeDecks = new ArrayList<>();
 
-    public static Carta converterParaEntidade(CartaResponse response) {
-        if (response.tipo().contains("monster")) {
-            return gerarCartaMonstro(response);
-        } else if (response.tipo().contains("spell")) {
-            return gerarCartaMagia(response);
+        for (DeckApiResponse deckResponse : response) {
+            listaDeDecks.add(DeckConverter.converterParaEntidade(deckResponse));
         }
-        return gerarCartaArmadilha(response);
+        return listaDeDecks;
     }
 
-    private static CartaMonstro gerarCartaMonstro(CartaResponse response) {
-        return CartaMonstro.builder()
-                .nome(response.nome())
-                .tipo(response.tipo())
-                .descricaoDaCarta(response.descricaoDaCarta())
-                .decks(response.decks())
-                .pontosDeAtaque(response.pontosDeAtaque())
-                .pontosDeDefesa(response.pontosDeDefesa())
-                .nivel(response.nivel())
-                .raca(response.raca())
-                .atributo(response.atributo())
-                .build();
+    private static List<ConjuntoDeImagens> gerarListaDeImagens(List<ApiImageSet> response) {
+        List<ConjuntoDeImagens> conjuntoDeImagens = new ArrayList<>();
+
+        for (ApiImageSet deckResponse : response) {
+            conjuntoDeImagens.add(ConjuntoDeImagensConverter.converterParaEntidade(deckResponse));
+        }
+        return conjuntoDeImagens;
     }
 
-    private static CartaMagia gerarCartaMagia(CartaResponse response) {
-        return CartaMagia.builder()
-                .nome(response.nome())
-                .tipo(response.tipo())
-                .descricaoDaCarta(response.descricaoDaCarta())
-                .decks(response.decks())
-                .build();
-    }
 
-    private static CartaArmadilha gerarCartaArmadilha(CartaResponse response) {
-        return CartaArmadilha.builder()
-                .nome(response.nome())
-                .tipo(response.tipo())
-                .descricaoDaCarta(response.descricaoDaCarta())
-                .decks(response.decks())
-                .build();
-    }
 }

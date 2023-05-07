@@ -12,15 +12,15 @@ public class DeckService {
 
     private DeckRepository deckRepository;
 
-    public List<DeckResponse> buscarDecks(){
+    public List<DeckResponse> buscarTodosDecks() {
         return null;
     }
 
-    public DeckResponse buscarDeckPorNome(String nomeDoDeck){
+    public DeckResponse buscarDeckPorNome(String nomeDoDeck) {
         return null;
     }
 
-    public DeckResponse criarNovoDeck(DeckRequest novoDeck){
+    public DeckResponse criarNovoDeck(DeckRequest novoDeck) {
         return null;
     }
 }

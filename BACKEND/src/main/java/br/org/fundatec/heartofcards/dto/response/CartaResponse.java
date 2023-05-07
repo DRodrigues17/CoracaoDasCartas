@@ -11,11 +11,13 @@ public record CartaResponse(
         String tipo,
         String descricaoDaCarta,
         List<Deck> decks,
+
+        List<ConjuntoDeImagensResponse> imagensDaCarta,
         int pontosDeAtaque,
         int pontosDeDefesa,
         int nivel,
         String raca,
         String atributo
 
-        ) {
+) {
 }
