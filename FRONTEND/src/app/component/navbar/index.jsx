@@ -1,10 +1,8 @@
 import React from 'react';
 import './style.css';
 import enigma from '../../../assets/img/enigma-milenio.svg';
-import BotaoLogin from '../button/botao-login';
-import BotaoCriarConta from '../button/botao-criar-conta';
-import BotaoBuscarCarta from '../button/botao-buscar-carta';
 import { Link } from 'react-router-dom';
+import BotaoLinkagem from '../botao-linkagem';
 
 export default function Navbar() {
   return (
@@ -14,9 +12,9 @@ export default function Navbar() {
         <p>Coração das cartas</p>
       </Link>
       <div className='botoes'>
-        <BotaoBuscarCarta />
-        <BotaoCriarConta />
-        <BotaoLogin />
+        <BotaoLinkagem url='/buscar-carta' texto='Busque por uma carta' />
+        <BotaoLinkagem url='/buscar-carta' texto='Crie sua Conta' />
+        <BotaoLinkagem url='/buscar-carta' texto='Faça Login' />
       </div>
       <div class="line"></div>
     </nav>

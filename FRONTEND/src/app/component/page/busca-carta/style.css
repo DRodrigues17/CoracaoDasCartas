@@ -1,0 +1,11 @@
+.tela-busca {
+  min-height: fit-content;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.area-busca {
+  padding: 1vw;
+  height: 10vh;
+}

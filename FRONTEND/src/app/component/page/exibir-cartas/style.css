@@ -1,0 +1,17 @@
+.area-cartas{
+    display: grid;
+    grid: repeat(3, 22vh) / auto-flow 10vw;
+    margin-bottom: 2vh;
+}
+
+.card-carta-exemplo{
+    height: 20vh;
+    width: 8vw;
+    border: 3px solid var(--purple);
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 1vw;
+}

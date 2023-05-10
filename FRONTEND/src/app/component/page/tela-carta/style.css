@@ -1,0 +1,14 @@
+.area-carta{
+    display: flex;
+    justify-content: space-around;
+}
+
+.imagem-carta{
+    height: 50vh;
+    border: 5px solid var(--violet);
+}
+
+.informacoes-carta{
+    width: 70vw;
+    border: 5px solid var(--violet);
+}
