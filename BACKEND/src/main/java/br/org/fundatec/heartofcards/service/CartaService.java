@@ -1,27 +1,26 @@
 package br.org.fundatec.heartofcards.service;
 
+import br.org.fundatec.heartofcards.dto.converter.CartaConverter;
 import br.org.fundatec.heartofcards.dto.response.CartaResponse;
 import br.org.fundatec.heartofcards.repository.CartaRepository;
+import lombok.AllArgsConstructor;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
-
 @Service
+@AllArgsConstructor
 public class CartaService {
 
-    private CartaRepository cartaRepository;
+    private final CartaRepository cartaRepository;
 
-    public List<CartaResponse> buscarCartas() {
-        return null;
+    public Page<CartaResponse> buscarCartas() {
+        return cartaRepository.findAll(Pageable.ofSize(30)).map(CartaConverter::converterParaResponse);
     }
 
     public CartaResponse buscarCartaPorNome(String nomeDaCarta) {
-        return null;
-    }
-    public CartaResponse buscarCartaPorTipo(String tipoDaCarta) {
-        return null;
-    }
 
-
+        return CartaConverter.converterParaResponse(cartaRepository.findByNome(nomeDaCarta));
+    }
 
 }

@@ -1,6 +1,6 @@
 server:
   servlet:
-    context-path: /heart-of-cards/v1
+    context-path: /coracao-das-cartas/v1
 spring:
   datasource:
     username: heartofcards
@@ -11,5 +11,5 @@ spring:
   jpa:
     database-platform: org.hibernate.dialect.PostgreSQL94Dialect
     hibernate:
-      ddl-auto: create-drop
+      ddl-auto: create
     show-sql: 'false'

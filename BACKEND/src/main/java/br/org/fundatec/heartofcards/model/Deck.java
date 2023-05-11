@@ -16,9 +16,13 @@ import java.util.UUID;
 public class Deck {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
     private String nome;
-    private String descricao;
+    private String codigo;
+    private int numeroDeCartas;
+    private String dataDeLancamento;
+    private String imagem;
 
     @ManyToMany
     @JoinTable(name = "carta_deck",

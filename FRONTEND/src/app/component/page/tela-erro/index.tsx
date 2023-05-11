@@ -1,10 +1,11 @@
+import React from 'react';
+
 export default function TelaErro() {
     return (
       <div className='content-area'>
-        <h1>Como jogar</h1>
-        <p>
+        <h1 className="titulo-tela">
          Infelizmente essa página não existe
-        </p>
+        </h1>
       </div>
     );
   }

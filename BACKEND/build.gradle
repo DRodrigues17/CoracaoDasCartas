@@ -22,6 +22,7 @@ dependencies {
 
 	implementation 'org.testcontainers:selenium:1.17.6'
 
+	runtimeOnly 'com.h2database:h2'
 	runtimeOnly 'org.postgresql:postgresql'
 	compileOnly 'javax.servlet:javax.servlet-api:4.0.1'
 	compileOnly 'org.projectlombok:lombok'

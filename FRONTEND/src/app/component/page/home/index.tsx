@@ -1,15 +1,13 @@
 import React from 'react';
 import './style.css';
-import BotaoHistoriaJogo from '../../button/botao-historia-jogo';
-import BotaoComoJogar from '../../button/botao-como-jogar';
-import BuscarCartas from '../../button/botao-buscar-carta';
+import BotaoLinkagem from '../../botao-linkagem';
 
 export default function Home() {
   return (
-    <div className='content-area'>
-      <BotaoHistoriaJogo />
-      <BotaoComoJogar />
-      <BuscarCartas />
+    <div className='content-area home'>
+      <BotaoLinkagem url='/historia-jogo' texto='História do Jogo' />
+      <BotaoLinkagem url='/como-jogar' texto='Como Jogar' />
+      <BotaoLinkagem url='/buscar-carta' texto='Busque por uma carta' />
     </div>
   );
 }
