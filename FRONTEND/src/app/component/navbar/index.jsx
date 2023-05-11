@@ -13,8 +13,8 @@ export default function Navbar() {
       </Link>
       <div className='botoes'>
         <BotaoLinkagem url='/buscar-carta' texto='Busque por uma carta' />
-        <BotaoLinkagem url='/buscar-carta' texto='Crie sua Conta' />
-        <BotaoLinkagem url='/buscar-carta' texto='Faça Login' />
+        <BotaoLinkagem url='/criar-conta' texto='Crie sua Conta' />
+        <BotaoLinkagem url='/login' texto='Faça Login' />
       </div>
       <div class="line"></div>
     </nav>

@@ -9,6 +9,8 @@ import ComoJogar from './app/component/page/como-jogar';
 import TelaErro from './app/component/page/tela-erro';
 import BuscaCarta from './app/component/page/busca-carta';
 import TelaCarta from './app/component/page/tela-carta';
+import CriarConta from './app/component/page/criar-conta';
+import TelaLogin from './app/component/page/login';
 
 
 const router = createBrowserRouter([
@@ -21,7 +23,9 @@ const router = createBrowserRouter([
       { path: "/historia-jogo", element: <HistoriaJogo /> },
       { path: "/como-jogar", element: <ComoJogar /> },
       { path: "/buscar-carta", element: <BuscaCarta /> },
-      { path: "/carta", element: <TelaCarta /> }
+      { path: "/carta", element: <TelaCarta /> },
+      { path: "/criar-conta", element: <CriarConta/>},
+      { path: "/login", element: <TelaLogin/>}
     ]
 
   }

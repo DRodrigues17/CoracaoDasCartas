@@ -5,8 +5,6 @@ import './style.css'
 
 export default function TelaCarta(pops: any) {
 
-
-
     return (
         <div className='content-area'>
             <h1 className='titulo-tela'> nome da carta</h1>
