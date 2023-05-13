@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
-import { getCartas } from '../../../api/CartaClient';
-import { Carta } from '../../../interface/Carta';
+import { getCartas } from '../../api/CartaClient';
+import { Carta } from '../../interface/Carta';
 
 import './style.css'
 

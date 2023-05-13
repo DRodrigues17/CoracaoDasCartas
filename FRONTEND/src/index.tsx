@@ -1,36 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './App';
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import Home from './app/component/page/home';
-import HistoriaJogo from './app/component/page/historia-jogo';
-import ComoJogar from './app/component/page/como-jogar';
-import TelaErro from './app/component/page/tela-erro';
-import BuscaCarta from './app/component/page/busca-carta';
-import TelaCarta from './app/component/page/tela-carta';
-import CriarConta from './app/component/page/criar-conta';
-import TelaLogin from './app/component/page/login';
+
+import { RouterProvider } from 'react-router-dom';
+import { router } from './app/routes/routes';
 
 
-const router = createBrowserRouter([
-  {
-    path: "/", 
-    element: <App />,
-    errorElement: <TelaErro/>,
-    children: [
-      { path: "/", element: <Home /> },
-      { path: "/historia-jogo", element: <HistoriaJogo /> },
-      { path: "/como-jogar", element: <ComoJogar /> },
-      { path: "/buscar-carta", element: <BuscaCarta /> },
-      { path: "/carta", element: <TelaCarta /> },
-      { path: "/criar-conta", element: <CriarConta/>},
-      { path: "/login", element: <TelaLogin/>}
-    ]
 
-  }
 
-])
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement

@@ -4,7 +4,7 @@
   --violet: #580069;
   --purple: #11007e;
   --blue: #003287;
-  --normal-text: 22px;
+  --normal-text: 20px;
 }
 @font-face {
   font-family: matrix;
@@ -66,31 +66,46 @@ body {
   font-weight: bold;
 }
 
-.content-area{
+.content-area {
   height: 70vh;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
 }
 
-.imagens-yugi{
-  height: 60vh;
+.imagens-tela {
+  height: 50vh;
 }
-.texto-estatico{
+.texto-estatico {
   color: var(--purple);
   text-align: center;
   width: 50vw;
 }
 
-.telas-conteudo-estatico{
+.telas-conteudo-estatico {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
 }
 
-.titulo-tela{
+.titulo-tela {
   padding: 10px;
   font-size: 40px;
   color: var(--fuchsia);
   text-shadow: 0px 4px 4px var(--violet);
+}
+
+.inputs {
+  width: 20vw;
+  border: 3px solid var(--fuchsia);
+  border-radius: 10px;
+}
+
+.area-inputs {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 50vh;
+  width: 50vw;
 }

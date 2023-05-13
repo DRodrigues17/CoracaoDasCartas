@@ -1,5 +1,5 @@
 import React from 'react';
-import yamiyugi from '../../../../assets/img/YamiYugi.svg';
+import yamiyugi from '../../../assets/img/YamiYugi.svg';
 
 import './style.css'
 
