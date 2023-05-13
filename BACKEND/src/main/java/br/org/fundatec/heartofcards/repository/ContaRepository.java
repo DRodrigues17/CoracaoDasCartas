@@ -10,6 +10,6 @@ import java.util.UUID;
 @Repository
 public interface ContaRepository extends JpaRepository<Conta, UUID> {
 
-    @Query("SELECT FROM conta where email = email and senha = senha")
-    Conta buscarPorEmailESenha(String email, String senha);
+    @Query("SELECT a FROM Conta a WHERE a.email = :email")
+    Conta buscarPorEmail(String email);
 }
