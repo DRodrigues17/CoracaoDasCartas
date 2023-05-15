@@ -14,7 +14,7 @@ import org.springframework.transaction.annotation.Transactional;
 @Service
 @AllArgsConstructor
 public class ContaService {
-    private ContaRepository contaRepository;
+    private final ContaRepository contaRepository;
 
     @Transactional
     public String criarConta(@Valid ContaRequest request) {

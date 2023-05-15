@@ -9,6 +9,7 @@ import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
+import org.webjars.NotFoundException;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
@@ -31,6 +32,16 @@ public class ExceptionHandlerAdvice {
         logger.error(e.getMessage());
         return new ResponseEntity<>(buildError("Sua conta não pode ser criada pelos seguintes motivos " + detalhesDosErros)
                 , HttpStatus.UNPROCESSABLE_ENTITY);
+    }
+
+    @ExceptionHandler(NotFoundException.class)
+    @ResponseStatus(HttpStatus.NOT_FOUND)
+    public ResponseEntity<ErroDTO> tratarCartaNaoEncontrada(NotFoundException e) {
+
+
+        logger.error(e.getMessage());
+        return new ResponseEntity<>(buildError("A carta " + e.getMessage() + "não foi encontrada")
+                , HttpStatus.NOT_FOUND);
     }
 
     @ExceptionHandler(IllegalStateException.class)
@@ -59,7 +70,7 @@ public class ExceptionHandlerAdvice {
     @ExceptionHandler(Throwable.class)
     @ResponseStatus(HttpStatus.I_AM_A_TEAPOT)
     public ResponseEntity<ErroDTO> tratarErroDesconheciodo(Throwable e) {
-        logger.error(e.getMessage());
+        logger.error(e.toString());
         return new ResponseEntity<>(buildError("Este erro é desconhecido, então não temos um tratamento para isso ainda"),
                 HttpStatus.I_AM_A_TEAPOT);
     }

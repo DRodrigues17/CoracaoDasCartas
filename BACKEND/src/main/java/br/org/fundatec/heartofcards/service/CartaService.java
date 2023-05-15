@@ -20,7 +20,7 @@ public class CartaService {
 
     public CartaResponse buscarCartaPorNome(String nomeDaCarta) {
 
-        return CartaConverter.converterParaResponse(cartaRepository.findByNome(nomeDaCarta));
+         return CartaConverter.converterParaResponse(cartaRepository.buscarCartaPorNome(nomeDaCarta));
     }
 
 }

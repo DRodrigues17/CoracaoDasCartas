@@ -15,6 +15,7 @@ import TelaLogin from '../../app/pages/login';
 
 
 export const router = createBrowserRouter([
+
     {
         path: "/",
         element: <App />,

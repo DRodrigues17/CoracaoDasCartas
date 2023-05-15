@@ -28,7 +28,6 @@ public class Carta {
     protected List<Deck> decks;
     @OneToMany(mappedBy = "carta")
     protected List<ConjuntoDeImagens> imagensDaCarta;
-
     protected int pontosDeAtaque;
     protected int pontosDeDefesa;
     protected int nivel;

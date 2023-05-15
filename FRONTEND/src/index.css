@@ -22,7 +22,7 @@ body {
 * {
   margin: 0;
   box-sizing: border-box;
-  font-family: matrix;
+  font-family: "matrix";
   font-size: var(--normal-text);
 }
 
@@ -100,12 +100,18 @@ body {
   border: 3px solid var(--fuchsia);
   border-radius: 10px;
 }
+.caixa-interativa{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
 
 .area-inputs {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  height: 50vh;
+  height: 40vh;
   width: 50vw;
 }

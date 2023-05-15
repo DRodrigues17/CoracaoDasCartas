@@ -10,12 +10,17 @@ export default function CriarConta() {
             <h1 className="titulo-tela">Informe seus dados para Criar a sua Conta</h1>
             <div className="telas-conteudo-estatico">
                 <img src={exodia} alt="" className="imagens-tela" />
-                <label className="area-inputs">
-                    <input type="text" placeholder="nome" className="inputs" />
-                    <input type="text" placeholder="email" className="inputs" />
-                    <input type="text" placeholder="senha" className="inputs" />
-                    <BotaoLinkagem texto="criar a conta" />
-                </label>
+                <div className="caixa-interativa">
+                    <label className="area-inputs">
+                        <input type="text" placeholder="nome" className="inputs" />
+                        <input type="text" placeholder="email" className="inputs" />
+                        <input type="text" placeholder="senha" className="inputs" />
+                        <button className="botao"> Efetuar cadastro</button>
+
+                    </label>
+                    <BotaoLinkagem url="/login" texto="já tem conta? faça login" />
+                </div>
+
             </div>
         </div>
     )
