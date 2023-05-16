@@ -4,7 +4,7 @@ import yamiyugi from '../../../assets/img/YamiYugi.svg';
 import './style.css'
 import AdicionarFavorito from "../../../assets/img/favoritar.svg";
 
-import { Carta } from '../../interface/Carta';
+import { Carta } from '../../interface/carta/Carta';
 import { buscarCartaPorNome } from '../../api/CartaClient';
 import { Link, useParams } from 'react-router-dom';
 
