@@ -1,4 +1,6 @@
 package br.org.fundatec.heartofcards.dto.response;
 
-public record ContaResponse() {
+public record ContaResponse(
+        String nomeDeUsuario
+) {
 }

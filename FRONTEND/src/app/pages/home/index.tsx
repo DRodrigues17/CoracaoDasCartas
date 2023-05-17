@@ -1,6 +1,6 @@
 import React from 'react';
 import './style.css';
-import BotaoLinkagem from '../../botao-linkagem';
+import BotaoLinkagem from '../../component/botao-linkagem';
 
 export default function Home() {
   return (

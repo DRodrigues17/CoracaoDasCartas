@@ -8,6 +8,7 @@
     height: 25vh;
     width: 8vw;
     border: 3px solid var(--purple);
+    color: var(--fuchsia);
     border-radius: 15px;
     display: flex;
     flex-direction: column;

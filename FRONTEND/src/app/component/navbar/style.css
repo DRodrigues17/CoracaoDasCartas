@@ -24,4 +24,8 @@
 .botoes{
   flex-direction: row;
 }
+.texto-navbar{
+  color: var(--yellow);
+  text-decoration: underline;
+}
 
