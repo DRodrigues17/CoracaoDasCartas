@@ -22,9 +22,8 @@ public class ContaController {
         return ResponseEntity.ok(contaService.realizarLogin(email, senha));
     }
 
-    @PostMapping
+    @PostMapping("/cadastro")
     public ResponseEntity<String> criarConta(@RequestBody @Valid ContaRequest request) {
-        contaService.criarConta(request);
         return new ResponseEntity<>(contaService.criarConta(request), HttpStatus.CREATED);
     }
 }

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 
 import './style.css';
 import magoSombrio from "../../../assets/img/MagoSombrio.svg";
@@ -14,7 +14,6 @@ export default function TelaLogin() {
     }
 
     const [mensagem, setMensagem] = useState('')
-
 
     function mudarEmail(event: any) {
         corpoRequisicao.email = event.target.value;
@@ -35,7 +34,7 @@ export default function TelaLogin() {
             setMensagem(`o usuario ${data.nomeDeUsuario} logou com sucesso`)
         }
         catch (error) {
-                console.log(error)
+            console.log(error)
         }
     }
 

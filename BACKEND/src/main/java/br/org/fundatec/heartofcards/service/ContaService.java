@@ -22,7 +22,7 @@ public class ContaService {
     }
 
     public ContaResponse realizarLogin(String email, String senha) {
-        return ContaConverter.converterParaResponse(contaRepository.buscarPorEmail(email));
+        return ContaConverter.converterParaResponse(contaRepository.buscarPorEmailESenha(email, senha));
     }
 
 
