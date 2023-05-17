@@ -15,9 +15,4 @@
   justify-content: center;
   align-items: flex-end;
 }
-p{
-  color: var(--yellow);
-  font-size: var(--important);
-  text-decoration: underline;
-}
 

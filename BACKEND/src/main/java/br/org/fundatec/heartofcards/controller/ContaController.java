@@ -17,7 +17,7 @@ public class ContaController {
 
     private final ContaService contaService;
 
-    @GetMapping("/{email}/{senha}")
+    @GetMapping("/login/{email}/{senha}")
     public ResponseEntity<ContaResponse> realizarLogin(@PathVariable("email") String email, @PathVariable("senha") String senha) {
         return ResponseEntity.ok(contaService.realizarLogin(email, senha));
     }

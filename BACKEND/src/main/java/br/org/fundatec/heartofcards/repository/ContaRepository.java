@@ -12,4 +12,6 @@ public interface ContaRepository extends JpaRepository<Conta, UUID> {
 
     @Query("SELECT a FROM Conta a WHERE a.email = :email")
     Conta buscarPorEmail(String email);
+
+    Conta findByEmail(String Email);
 }

@@ -9,6 +9,6 @@ export const criarConta = (conta: Conta) => {
     baseUrl.post(`/${conta}`)
 }
 
-export const fazerLogin = (email: String, senha: string) => {
-    baseUrl.get(`/${email}/${senha}`)
+export const fazerLogin = async (email: string, senha: string) => {
+    return baseUrl.get(`/login/${email}/${senha}`)
 }

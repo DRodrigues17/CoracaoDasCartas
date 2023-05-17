@@ -10,8 +10,7 @@ import java.util.UUID;
 
 @Entity
 @Builder
-@Getter
-@Setter
+@Data
 @NoArgsConstructor
 @AllArgsConstructor
 public class Conta {

@@ -1,6 +1,6 @@
 import React from 'react';
 import './style.css';
-import github from '../../../assets/img/github.svg';
+import github from '../../../assets/img/drodrigues17.svg';
 
 export default function Footer() {
   return (
@@ -8,7 +8,6 @@ export default function Footer() {
       <div className="footer-line" />
       <a className="criador" href="https://github.com/DRodrigues17" target="_blank" rel="noreferrer">
         <img src={github} alt="" />
-        <p>/DRodrigues17</p>
       </a>
     </footer>
 

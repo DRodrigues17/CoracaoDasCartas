@@ -28,7 +28,6 @@ body {
 
 .site-identity {
   background: var(--blue);
-  color: var(--yellow);
   width: 100vw;
   height: 15vh;
   display: flex;

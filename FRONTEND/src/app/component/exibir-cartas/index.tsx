@@ -28,8 +28,8 @@ export default function ExibirCartas() {
             {cartas.map(carta => {
                 return (
                     <li key={carta.nome} className='card-carta-exemplo'>
-                        <p>Nome: {carta.nome}</p>
-                        <p>Tipo: {carta.tipo}</p>
+                        <p >Nome: {carta.nome}</p>
+                        <p >Tipo: {carta.tipo}</p>
                     </li>
                 )
             })}

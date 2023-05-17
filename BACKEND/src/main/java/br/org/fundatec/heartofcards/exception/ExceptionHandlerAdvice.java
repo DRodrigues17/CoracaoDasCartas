@@ -47,14 +47,14 @@ public class ExceptionHandlerAdvice {
     @ExceptionHandler(IllegalStateException.class)
     @ResponseStatus(HttpStatus.NOT_ACCEPTABLE)
     public ResponseEntity<ErroDTO> tratarListaVazia(IllegalStateException e) {
-        logger.error(e.getMessage());
+        logger.error(e.toString());
         return new ResponseEntity<>(buildError("não possuimos nenhuma carta que se encaixa nesses parametros"), HttpStatus.NOT_ACCEPTABLE);
     }
 
     @ExceptionHandler(ContaNaoEncontradaException.class)
     @ResponseStatus(HttpStatus.UNAUTHORIZED)
     public ResponseEntity<ErroDTO> tratarContaNaoEncontrada(ContaNaoEncontradaException e) {
-        logger.error(e.getMessage());
+        logger.error(e.toString());
 
         return new ResponseEntity<>(buildError("Nenhuma conta com o email " + e.getMessage() + " foi encontrada em nosso sistema, verifique as credenciais"), HttpStatus.UNAUTHORIZED);
     }
@@ -62,18 +62,18 @@ public class ExceptionHandlerAdvice {
     @ExceptionHandler(SenhaInvalidaException.class)
     @ResponseStatus(HttpStatus.UNAUTHORIZED)
     public ResponseEntity<ErroDTO> tratarSenhaIncorreta(SenhaInvalidaException e) {
-        logger.error(e.getMessage());
+        logger.error(e.toString());
 
         return new ResponseEntity<>(buildError("A senha " + e.getMessage() + " não corresponde com a dessa conta, verifique as credenciais"), HttpStatus.UNAUTHORIZED);
     }
 
-    @ExceptionHandler(Throwable.class)
-    @ResponseStatus(HttpStatus.I_AM_A_TEAPOT)
-    public ResponseEntity<ErroDTO> tratarErroDesconheciodo(Throwable e) {
-        logger.error(e.toString());
-        return new ResponseEntity<>(buildError("Este erro é desconhecido, então não temos um tratamento para isso ainda"),
-                HttpStatus.I_AM_A_TEAPOT);
-    }
+//    @ExceptionHandler(Throwable.class)
+//    @ResponseStatus(HttpStatus.I_AM_A_TEAPOT)
+//    public ResponseEntity<ErroDTO> tratarErroDesconheciodo(Throwable e) {
+//        logger.error(e.toString());
+//        return new ResponseEntity<>(buildError("Este erro é desconhecido, então não temos um tratamento para isso ainda"),
+//                HttpStatus.I_AM_A_TEAPOT);
+//    }
 
     private ErroDTO buildError(String message) {
         return new ErroDTO(message, LocalDateTime.now());

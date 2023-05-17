@@ -9,7 +9,7 @@ export default function Navbar() {
     <nav className='site-identity container'>
       <Link to={"/"} className="logo">
         <img className="img" src={enigma} alt='' />
-        <p>Coração das cartas</p>
+        <p className='texto-navbar'>Coração das cartas</p>
       </Link>
       <div className='botoes'>
         <BotaoLinkagem url='/buscar-carta' texto='Busque por uma carta' />

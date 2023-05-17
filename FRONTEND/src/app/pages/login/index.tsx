@@ -15,32 +15,28 @@ export default function TelaLogin() {
 
     const [mensagem, setMensagem] = useState('')
 
-    // depois enviar pra requisição
-    // deepois mostrar o retorno da requisição na tela
-
-    // useEffect(() => {
-    //buscarCartas.then(response => {
-    //  console.log(response.data)
-    //setCartas(response.data.content)
-    //})
-    //  .catch(error => {
-    //  console.log(error)
-    //})
-    //}, [])
-
 
     function mudarEmail(event: any) {
         corpoRequisicao.email = event.target.value;
-        console.log(corpoRequisicao.email)
     }
 
     function mudarSenha(event: any) {
         corpoRequisicao.senha = event.target.value;
-        console.log(corpoRequisicao.senha)
     }
 
-    function testarRequisicao(): any {
-        console.log(fazerLogin(corpoRequisicao.email, corpoRequisicao.senha))
+
+    async function logar() {
+        try {
+            console.log(corpoRequisicao.email)
+            console.log(corpoRequisicao.senha)
+            const { data } = await fazerLogin(corpoRequisicao.email, corpoRequisicao.senha)
+
+            console.log(data)
+            setMensagem(`o usuario ${data.nomeDeUsuario} logou com sucesso`)
+        }
+        catch (error) {
+                console.log(error)
+        }
     }
 
 
@@ -55,7 +51,7 @@ export default function TelaLogin() {
                     <label className="area-inputs ">
                         <input type="text" placeholder="email" className="inputs" onChange={event => mudarEmail(event)} />
                         <input type="text" placeholder="senha" className="inputs" onChange={event => mudarSenha(event)} />
-                        <button className="botao" onClick={testarRequisicao()}>Logar</button>
+                        <button className="botao" onClick={logar}>Logar</button>
                     </label>
                     <BotaoLinkagem url="/criar-conta" texto="novo por aqui? crie sua conta" />
                 </div>
