@@ -28,4 +28,4 @@ Agora falando em testes, é a mesma coisa, mas com um dos seguintes comandos:
 Depois disso, basta acessar o swagger na seguinte url ou usar a coleção
 do postman que está na pasta resources para testar os endpoints e retornos.
 
-> http://localhost:8080/heart-of-cards/v1/swagger-ui/index.html#/
+> http://localhost:8080/coracao-das-cartas/v2/swagger-ui/index.html#/

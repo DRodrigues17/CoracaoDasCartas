@@ -12,6 +12,6 @@ services:
     volumes:
       - db-hoc:/var/lib/postgresql/data
     ports:
-      - "5432:5432"
+      - "1717:5432"
 volumes:
   db-hoc:

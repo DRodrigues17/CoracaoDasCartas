@@ -1,15 +1,14 @@
 server:
   servlet:
-    context-path: /coracao-das-cartas/v1
+    context-path: /coracao-das-cartas/v2
 spring:
   datasource:
-    username: heartofcards
-    url: jdbc:postgresql://localhost:1717/dbheartofcards
+    username: coracaodascartas
+    url: jdbc:postgresql://localhost:1717/dbcoracaodascartas
     driverClassName: org.postgresql.Driver
-    password: heartofcards
+    password: coracaodascartas
 
   jpa:
-    database-platform: org.hibernate.dialect.PostgreSQL94Dialect
     hibernate:
       ddl-auto: create
     show-sql: 'false'
