@@ -2,10 +2,12 @@ import axios from 'axios';
 import { Conta } from '../interface/conta/Conta';
 
 const baseUrl = axios.create({
-    baseURL: 'http://localhost:8080/coracao-das-cartas/v1/contas'
+    baseURL: import.meta.env.VITE_BACKEND_BASE_URL + '/contas'
 })
 
 export const criarConta = async (conta: Conta) => {
+    console.log("URL BASE DO BACKEND" + baseUrl);
+    
     return baseUrl.post( "/cadastro", conta)
 }
 
