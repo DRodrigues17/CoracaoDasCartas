@@ -1,5 +1,5 @@
 export type Conta = {
-    nomeDeUsuario: String;
-    email: String;
-    senha: String;
+    nomeDeUsuario: string;
+    email: string;
+    senha: string;
 }

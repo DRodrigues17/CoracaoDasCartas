@@ -1,3 +1,3 @@
 export type ContaResponse = {
-    nomeDeUsuario: String;
+    nomeDeUsuario: string;
 }

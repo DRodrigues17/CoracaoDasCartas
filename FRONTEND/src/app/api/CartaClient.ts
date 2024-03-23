@@ -6,6 +6,6 @@ const baseUrl = axios.create({
 
 export const buscarCartas = baseUrl.get('/cartas')
 
-export const buscarCartaPorNome = (nome: String) => {
+export const buscarCartaPorNome = (nome: string) => {
     baseUrl.get(`/cartas/${nome}`)
 }

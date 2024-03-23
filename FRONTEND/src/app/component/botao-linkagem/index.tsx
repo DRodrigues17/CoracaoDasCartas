@@ -1,12 +1,10 @@
-import React from 'react';
-import './style.css';
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
+import "./style.css";
 
-export default function BotaoLinkagem(props : any) {
-
-
+export default function BotaoLinkagem(props: any) {
   return (
-    <Link to={props.url} className='botao'>{props.texto}</Link>
+    <Link to={props.url} className="botao">
+      {props.texto}
+    </Link>
   );
-
 }
