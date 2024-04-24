@@ -26,7 +26,7 @@ public class DeckService {
     }
 
     public DeckResponse buscarDeckPorNome(String nomeDoDeck) {
-        return DeckConverter.converterParaResponse(deckRepository.findByNomme(nomeDoDeck).orElseThrow());
+        return DeckConverter.converterParaResponse(deckRepository.findByNome(nomeDoDeck).orElseThrow());
     }
 
     @Transactional

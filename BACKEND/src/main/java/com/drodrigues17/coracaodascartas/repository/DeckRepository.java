@@ -10,5 +10,5 @@ import java.util.UUID;
 @Repository
 public interface DeckRepository extends JpaRepository<Deck, UUID> {
 
-  Optional<Deck> findByNomme(String nomeDoDeck);
+  Optional<Deck> findByNome(String nomeDoDeck);
 }
