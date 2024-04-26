@@ -7,20 +7,19 @@
 - dbeaver (recomendado, para consultas no banco caso precisemos de alterações futuras)
 
 ## 2 - executando o projeto
-Após você clonar ele, você pode abrir um terminal na pasta raiz e executar
-o seguinte comando para ter o banco de dados na sua máquina:
-> docker-compose up -d
-
-Você não rpecisa usar docker se não quiser e se tiver o postgres instalado pode só pular
-para os próximos passos.
-
-Após ter o banco de dados na sua máquina, você pode abrir o projeto em seu IDE de preferência
+Após você clonar ele, você pode abrir o projeto em seu IDE de preferência
 e mandar executar ou abrir o terminal e executar umm dos seguintes comandos:
 > gradle bootRun
 
-> ./gradlew bootRun
 
-Agora falando em testes, é a mesma coisa, mas com um dos seguintes comandos:
+Se voce for mais experiente deve achar estranho que não citei a criação de um banco de dados ou execução de um docker-compose,
+isso se deve a dependencia abaixo que ja faz isso automaticamente só de identificar o arquivo docker-compose, veja a documentação.
+
+- https://spring.io/blog/2023/06/21/docker-compose-support-in-spring-boot-3-1
+- https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#features.docker-compose
+- https://www.baeldung.com/docker-compose-support-spring-boot
+
+Agora falando em testes, é o mesmo, mas com um dos seguintes comandos:
 > gradle test
 
 > ./gradlew test

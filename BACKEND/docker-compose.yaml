@@ -1,17 +1,17 @@
 version: '3.1'
 services:
-  db-hoc:
+  db-coracaodascartas:
     image: postgres:latest
     restart: unless-stopped
     environment:
       POSTGRES_DB: dbcoracaodascartas
       POSTGRES_USER: coracaodascartas
       POSTGRES_PASSWORD: coracaodascartas
-
       PGDATA: /var/lib/postgresql/data
+
     volumes:
-      - db-hoc:/var/lib/postgresql/data
+      - db-coracaodascartas:/var/lib/postgresql/data
     ports:
       - "1717:5432"
 volumes:
-  db-hoc:
+  db-coracaodascartas:
