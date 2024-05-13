@@ -2,7 +2,7 @@
 
 ## 1- coisas necessárias
 - Docker ou postgres instalado na máquina
-- java 17 ou posterior
+- java 21 ou posterior
 - IDE ou compilador para o código
 - dbeaver (recomendado, para consultas no banco caso precisemos de alterações futuras)
 
