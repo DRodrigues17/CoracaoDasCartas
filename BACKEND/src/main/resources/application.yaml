@@ -3,10 +3,10 @@ server:
     context-path: /coracao-das-cartas/v2
 spring:
   datasource:
-    username: coracaodascartas
-    url: jdbc:postgresql://localhost:1717/dbcoracaodascartas
+    username: ${POSTGRES_USER}
+    url: ${URL_BANCO}
     driverClassName: org.postgresql.Driver
-    password: coracaodascartas
+    password: ${POSTGRES_PASSWORD}
 
   jpa:
     hibernate:
