@@ -1,11 +1,11 @@
 import axios from 'axios';
-import { Conta } from '../interface/conta/Conta';
+import { Usuario } from '../interface/usuario/Usuario.ts';
 
 const baseUrl = axios.create({
-    baseURL: import.meta.env.VITE_BACKEND_BASE_URL + '/contas'
+    baseURL: import.meta.env.VITE_BACKEND_BASE_URL + '/usuarios'
 })
 
-export const criarConta = async (conta: Conta) => {
+export const criarConta = async (conta: Usuario) => {
     console.log("URL BASE DO BACKEND" + baseUrl);
     
     return baseUrl.post( "/cadastro", conta)

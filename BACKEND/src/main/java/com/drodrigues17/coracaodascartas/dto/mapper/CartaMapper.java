@@ -1,4 +1,4 @@
-package com.drodrigues17.coracaodascartas.dto.converter;
+package com.drodrigues17.coracaodascartas.dto.mapper;
 
 import com.drodrigues17.coracaodascartas.dto.api.ApiImageSet;
 import com.drodrigues17.coracaodascartas.dto.api.CartaApiResponse;
@@ -11,7 +11,7 @@ import com.drodrigues17.coracaodascartas.model.carta.Carta;
 import java.util.ArrayList;
 import java.util.List;
 
-public interface CartaConverter {
+public interface CartaMapper {
 
     static CartaResponse converterParaResponse(Carta carta) {
         return CartaResponse.builder()
@@ -47,7 +47,7 @@ public interface CartaConverter {
         List<Deck> listaDeDecks = new ArrayList<>();
 
         for (DeckApiResponse deckResponse : response) {
-            listaDeDecks.add(DeckConverter.converterParaEntidade(deckResponse));
+            listaDeDecks.add(DeckMapper.converterParaEntidade(deckResponse));
         }
         return listaDeDecks;
     }
@@ -56,7 +56,7 @@ public interface CartaConverter {
         List<ConjuntoDeImagens> conjuntoDeImagens = new ArrayList<>();
 
         for (ApiImageSet deckResponse : response) {
-            conjuntoDeImagens.add(ConjuntoDeImagensConverter.converterParaEntidade(deckResponse));
+            conjuntoDeImagens.add(ConjuntoDeImagensMapper.converterParaEntidade(deckResponse));
         }
         return conjuntoDeImagens;
     }

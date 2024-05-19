@@ -1,4 +1,4 @@
-import React from "react";
+
 import github from "../../../assets/img/drodrigues17.svg";
 import "./style.css";
 

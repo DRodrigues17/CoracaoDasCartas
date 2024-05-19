@@ -1,4 +1,4 @@
-export type CorpoRequestLogin = {
+export type UsuarioLoginRequest = {
     email: string;
     senha: string;
 }

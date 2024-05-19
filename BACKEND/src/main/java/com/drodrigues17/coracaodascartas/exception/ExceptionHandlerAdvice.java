@@ -28,7 +28,7 @@ public class ExceptionHandlerAdvice {
         }
 
         log.error(e.getMessage());
-        return new ResponseEntity<>(buildError("Sua conta não pode ser criada pelos seguintes motivos " + detalhesDosErros)
+        return new ResponseEntity<>(construirErro("Sua conta não pode ser criada pelos seguintes motivos " + detalhesDosErros)
                 , HttpStatus.UNPROCESSABLE_ENTITY);
     }
 
@@ -38,7 +38,7 @@ public class ExceptionHandlerAdvice {
 
 
         log.error(e.getMessage());
-        return new ResponseEntity<>(buildError("A carta " + e.getMessage() + "não foi encontrada")
+        return new ResponseEntity<>(construirErro("A carta " + e.getMessage() + "não foi encontrada")
                 , HttpStatus.NOT_FOUND);
     }
 
@@ -46,15 +46,15 @@ public class ExceptionHandlerAdvice {
     @ResponseStatus(HttpStatus.NOT_ACCEPTABLE)
     public ResponseEntity<ErroDTO> tratarListaVazia(IllegalStateException e) {
         log.error(e.getMessage());
-        return new ResponseEntity<>(buildError("não possuimos nenhuma carta que se encaixa nesses parametros"), HttpStatus.NOT_ACCEPTABLE);
+        return new ResponseEntity<>(construirErro("não possuimos nenhuma carta que se encaixa nesses parametros"), HttpStatus.NOT_ACCEPTABLE);
     }
 
-    @ExceptionHandler(ContaNaoEncontradaException.class)
+    @ExceptionHandler(UsuarioNaoEncontradoException.class)
     @ResponseStatus(HttpStatus.UNAUTHORIZED)
-    public ResponseEntity<ErroDTO> tratarContaNaoEncontrada(ContaNaoEncontradaException e) {
+    public ResponseEntity<ErroDTO> tratarContaNaoEncontrada(UsuarioNaoEncontradoException e) {
         log.error(e.getMessage());
 
-        return new ResponseEntity<>(buildError("Nenhuma conta com o email " + e.getMessage() + " foi encontrada em nosso sistema, verifique as credenciais"), HttpStatus.UNAUTHORIZED);
+        return new ResponseEntity<>(construirErro("Nenhuma conta com o email " + e.getMessage() + " foi encontrada em nosso sistema, verifique as credenciais"), HttpStatus.UNAUTHORIZED);
     }
 
     @ExceptionHandler(SenhaInvalidaException.class)
@@ -62,18 +62,18 @@ public class ExceptionHandlerAdvice {
     public ResponseEntity<ErroDTO> tratarSenhaIncorreta(SenhaInvalidaException e) {
         log.error(e.getMessage());
 
-        return new ResponseEntity<>(buildError("A senha " + e.getMessage() + " não corresponde com a dessa conta, verifique as credenciais"), HttpStatus.UNAUTHORIZED);
+        return new ResponseEntity<>(construirErro("A senha " + e.getMessage() + " não corresponde com a dessa conta, verifique as credenciais"), HttpStatus.UNAUTHORIZED);
     }
 
     @ExceptionHandler(Exception.class)
     @ResponseStatus(HttpStatus.I_AM_A_TEAPOT)
     public ResponseEntity<ErroDTO> tratarErroDesconheciodo(Throwable e) {
         log.error(e.getMessage());
-        return new ResponseEntity<>(buildError("Este erro é desconhecido, então não temos um tratamento para isso ainda"),
+        return new ResponseEntity<>(construirErro("Este erro é desconhecido, então não temos um tratamento para isso ainda"),
                 HttpStatus.I_AM_A_TEAPOT);
     }
 
-    private ErroDTO buildError(String message) {
+    private ErroDTO construirErro(String message) {
         return new ErroDTO(message, LocalDateTime.now());
     }
 }

@@ -2,7 +2,7 @@ package com.drodrigues17.coracaodascartas.tasks;
 
 import com.drodrigues17.coracaodascartas.client.CartasClient;
 import com.drodrigues17.coracaodascartas.dto.api.CartaApiResponse;
-import com.drodrigues17.coracaodascartas.dto.converter.CartaConverter;
+import com.drodrigues17.coracaodascartas.dto.mapper.CartaMapper;
 import com.drodrigues17.coracaodascartas.model.carta.Carta;
 import com.drodrigues17.coracaodascartas.repository.CartaRepository;
 import lombok.RequiredArgsConstructor;
@@ -29,7 +29,7 @@ public class PopularCartas {
         for (CartaApiResponse cartaDaApi : client.buscarTodasCartas().data()) {
 
 
-            Carta carta = CartaConverter.converterParaEntidade(cartaDaApi);
+            Carta carta = CartaMapper.converterParaEntidade(cartaDaApi);
 
             if (!repository.findAll().contains(carta)) {
                 repository.save(carta);

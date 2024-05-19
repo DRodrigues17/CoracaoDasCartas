@@ -10,8 +10,8 @@ spring:
 
   jpa:
     hibernate:
-      ddl-auto: create
-    show-sql: 'false'
+      ddl-auto: create-drop
+    show-sql: false
   docker:
     compose:
       enabled: true
