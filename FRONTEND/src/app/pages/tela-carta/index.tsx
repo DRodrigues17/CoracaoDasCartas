@@ -16,7 +16,7 @@ export default function TelaCarta(props: any) {
 
       <div className="area-carta">
         <img src={yamiyugi} alt="" className="imagem-carta" />
-        <Link to={"/criar-conta"}>
+        <Link to={"/criar-usuario"}>
           <img src={AdicionarFavorito} alt="" />
         </Link>
         <div className="informacoes-carta">

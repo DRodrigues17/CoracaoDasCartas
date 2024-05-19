@@ -1,4 +1,4 @@
-package com.drodrigues17.coracaodascartas.config;
+package com.drodrigues17.coracaodascartas.config.security;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

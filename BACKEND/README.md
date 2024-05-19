@@ -28,3 +28,7 @@ Depois disso, basta acessar o swagger na seguinte url ou usar a coleção
 do postman que está na pasta resources para testar os endpoints e retornos.
 
 > http://localhost:8080/coracao-das-cartas/v2/swagger-ui/index.html#/
+
+
+## Bibliografia
+ - spring ssecurity : https://youtu.be/KxqlJblhzfI?feature=shared

@@ -20,7 +20,7 @@ export const router = createBrowserRouter([
       { path: "/como-jogar", element: <ComoJogar /> },
       { path: "/buscar-carta", element: <BuscaCarta /> },
       { path: "/carta", element: <TelaCarta /> },
-      { path: "/criar-conta", element: <CriarConta /> },
+      { path: "/criar-usuario", element: <CriarConta /> },
       { path: "/login", element: <TelaLogin /> },
     ],
   },

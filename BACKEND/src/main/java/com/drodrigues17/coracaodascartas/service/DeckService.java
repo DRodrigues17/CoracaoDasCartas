@@ -1,6 +1,6 @@
 package com.drodrigues17.coracaodascartas.service;
 
-import com.drodrigues17.coracaodascartas.dto.converter.DeckConverter;
+import com.drodrigues17.coracaodascartas.dto.mapper.DeckMapper;
 import com.drodrigues17.coracaodascartas.dto.request.DeckRequest;
 import com.drodrigues17.coracaodascartas.dto.response.DeckResponse;
 import com.drodrigues17.coracaodascartas.model.Deck;
@@ -21,19 +21,19 @@ public class DeckService {
         return deckRepository
             .findAll()
             .stream()
-            .map(DeckConverter::converterParaResponse)
+            .map(DeckMapper::converterParaResponse)
             .toList();
     }
 
     public DeckResponse buscarDeckPorNome(String nomeDoDeck) {
-        return DeckConverter.converterParaResponse(deckRepository.findByNome(nomeDoDeck).orElseThrow());
+        return DeckMapper.converterParaResponse(deckRepository.findByNome(nomeDoDeck).orElseThrow());
     }
 
     @Transactional
     public DeckResponse criarNovoDeck(DeckRequest novoDeck) {
 
 
-        Deck deckQueVaiSerSalvoNoBanco = DeckConverter.converterParaEntidade(novoDeck);
-        return DeckConverter.converterParaResponse(deckRepository.save(deckQueVaiSerSalvoNoBanco));
+        Deck deckQueVaiSerSalvoNoBanco = DeckMapper.converterParaEntidade(novoDeck);
+        return DeckMapper.converterParaResponse(deckRepository.save(deckQueVaiSerSalvoNoBanco));
     }
 }
