@@ -1,5 +1,6 @@
 package com.drodrigues17.coracaodascartas.controller;
 
+import com.drodrigues17.coracaodascartas.dto.request.UsuarioAutenticacaoRequest;
 import com.drodrigues17.coracaodascartas.dto.request.UsuarioRequest;
 import com.drodrigues17.coracaodascartas.dto.response.UsuarioResponse;
 import com.drodrigues17.coracaodascartas.service.UsuarioService;
@@ -17,13 +18,13 @@ public class UsuarioController {
 
     private final UsuarioService usuarioService;
 
-    @GetMapping("/login/{email}/{senha}")
-    public ResponseEntity<UsuarioResponse> realizarLogin(@PathVariable("email") String email, @PathVariable("senha") String senha) {
-        return ResponseEntity.ok(usuarioService.realizarLogin(email, senha));
+    @PostMapping("/cadastro")
+    public ResponseEntity<UsuarioResponse> cadastrar(@RequestBody @Valid UsuarioRequest request) {
+        return new ResponseEntity<>(usuarioService.cadastrar(request), HttpStatus.CREATED);
     }
 
-    @PostMapping("/cadastro")
-    public ResponseEntity<String> criarConta(@RequestBody @Valid UsuarioRequest request) {
-        return new ResponseEntity<>(usuarioService.criarConta(request), HttpStatus.CREATED);
+    @PostMapping("/login")
+    public ResponseEntity<UsuarioResponse> autenticar(@RequestBody UsuarioAutenticacaoRequest request) {
+        return ResponseEntity.ok(usuarioService.autenticar(request));
     }
 }

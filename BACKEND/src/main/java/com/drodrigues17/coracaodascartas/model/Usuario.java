@@ -2,7 +2,10 @@ package com.drodrigues17.coracaodascartas.model;
 
 import com.drodrigues17.coracaodascartas.model.enums.Cargo;
 import jakarta.persistence.*;
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -23,6 +26,7 @@ public class Usuario implements UserDetails {
     private String nome;
     @Column(unique = true)
     private String email;
+    @Setter
     private String senha;
     @Enumerated(EnumType.STRING)
     private Cargo cargo;

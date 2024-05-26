@@ -31,4 +31,6 @@ do postman que está na pasta resources para testar os endpoints e retornos.
 
 
 ## Bibliografia
- - spring ssecurity : https://youtu.be/KxqlJblhzfI?feature=shared
+
+- spring security : https://youtu.be/KxqlJblhzfI?feature=shared
+- spring security : https://youtu.be/E03Q77IgU9g?feature=shared
