@@ -68,7 +68,7 @@ public class ExceptionHandlerAdvice {
     @ExceptionHandler(Exception.class)
     @ResponseStatus(HttpStatus.I_AM_A_TEAPOT)
     public ResponseEntity<ErroDTO> tratarErroDesconheciodo(Throwable e) {
-        log.error(e.getMessage());
+        log.error(e.toString());
         return new ResponseEntity<>(construirErro("Este erro é desconhecido, então não temos um tratamento para isso ainda"),
                 HttpStatus.I_AM_A_TEAPOT);
     }

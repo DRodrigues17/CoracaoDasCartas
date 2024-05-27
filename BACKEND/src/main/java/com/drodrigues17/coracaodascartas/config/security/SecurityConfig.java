@@ -22,8 +22,8 @@ public class SecurityConfig {
             {
                     "/swagger-ui/**",
                     "/swagger-ui.html",
-                    "/coracao-das-cartas/v2/cartas/",
-                    "/coracao-das-cartas/v2/usuarios/**"
+                    "/usuarios/**",
+                    "/teste"
             };
     private final JwtAuthFilter jwtAuthenticationFilter;
     private final AuthenticationProvider authenticationProvider;
